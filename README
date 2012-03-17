@@ -1,0 +1,41 @@
+SWE 437 Homework 7 
+Spring 2012
+Faults, Errors, and Failures
+
+Exercise Section 1.2, Number 3. Instead of using one of the four given programs, use the program given below:
+
+class Vehicle implements Cloneable {
+
+   private int x;
+
+   public Vehicle(int y) { x = y;}
+
+   public Object clone() { 
+      Object result = new Vehicle(this.x);
+      // Location "A"
+      return result;
+   }
+   // other methods omitted
+}
+class Truck extends Vehicle {
+
+   private int y;
+
+   public Truck(int z) { super(z); y = z;}
+
+   public Object clone() {
+      Object result = super.clone();
+      // Location "B"
+      ((Truck) result).y = this.y;  // throws ClassCastException
+      return result;             
+   }
+   // other methods omitted
+}
+Those of you who studied Bloch in CS/SWE 332 should find this code familiar. As a hint, the fault is in the code just prior to Location A.
+
+Note that a test in this context simply involves instantiating some object of a suitable class and calling the clone() method.
+
+Note: Students unfamiliar with Bloch can access Item 11, the relevant item, in Bloch on page 54: 
+Joshua Bloch. Effective Java. Second Edition. Addison Wesley, 2008, ISBN 0-321-35668-3. 
+Direct Safari Link 
+General Safari Link (off campus)
