@@ -18,8 +18,13 @@ public class dresselJames07 {
 	 * Truck.   
 	 */
 
-	//Part B If possible, identify a test case that does not execute the fault.
-	
+	/* Part B: If possible, identify a test case that does not execute the fault.
+	 * I don't believe that any meaningful test can be run that does not 
+	 * execute the fault. There are only two methods in Vehicle, the 
+	 * constructor and the clone method. Executing the clone method would 
+	 * result in executing the fault. Testing the constructor would be rather 
+	 * pointless. 
+	 */
 	
 	@Test
 	public void testCNoErrorState() {
