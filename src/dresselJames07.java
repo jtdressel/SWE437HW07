@@ -25,6 +25,13 @@ import org.junit.Test;
 
 
 public class dresselJames07 {
+	
+	/*Part A
+	 * The fault is that Vehicle's clone returns new Vehicle(this.x) instead of 
+	 * using super.clone. The result is that Object's clone is never called, so
+	 * the result is not of the correct class, and thus, cannot be cast into a 
+	 * Truck.   
+	 */
 
 	@Test
 	public void test() {
