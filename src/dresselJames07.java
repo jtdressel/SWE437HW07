@@ -7,11 +7,17 @@
 //f Fix the fault and verify that the given test now produces the expected output. 
 
 //A
-//b
-//c
-//d
-//e
-//f
+//B
+//C
+//D
+//E
+//F
+
+
+
+//Fault: static defect
+//Error: incorrect interal state
+//Failure: External, incorrect behavior
 
 import static org.junit.Assert.*;
 
