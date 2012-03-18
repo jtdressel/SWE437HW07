@@ -22,9 +22,18 @@ public class dresselJames07 {
 	
 	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+	public void testCNoErrorState() {
+		//Part C
+		//Test that executes fault, but does not result in an error state
+		Vehicle vehicleOriginal = new Vehicle(23);
+		Vehicle vehicleClone = (Vehicle)vehicleOriginal.clone();
+		
+		assertFalse(vehicleOriginal==vehicleClone);
+		assertEquals(vehicleOriginal.getClass(), vehicleClone.getClass());
+		assertEquals(vehicleOriginal, vehicleClone);//Not strictly necessary, but Bloch recommends
+		
+		}
+	
 
 	//Part D if possible identify a test case that results in an error, but not a failure. Hint: Don't forget about the program counter
 	//Part E For the given test case, identify the first error state. Be sure to describe the complete state. 
