@@ -40,8 +40,12 @@ public class dresselJames07 {
 		}
 	
 
-	//Part D if possible identify a test case that results in an error, but not a failure. Hint: Don't forget about the program counter
-	
+	/* Part D if possible identify a test case that results in an error, but not
+	 * a failure. Hint: Don't forget about the program counter
+	 * 
+	 * There are no possible test cases that result in an error state but do not
+	 * result in an observable failure. 
+	 */
 	
 	//Part E For the given test case, identify the first error state. Be sure to describe the complete state. 
 	
