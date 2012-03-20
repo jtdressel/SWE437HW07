@@ -41,7 +41,17 @@ public class dresselJames07 {
 	
 
 	//Part D if possible identify a test case that results in an error, but not a failure. Hint: Don't forget about the program counter
+	@Test
+	public void testDErrorNoFailure(){
+		Vehicle vehicleOriginal = new Vehicle(23);
+		Truck a = new Truck(3);
+		Object b = a.clone();
+		
+	}
+	
 	//Part E For the given test case, identify the first error state. Be sure to describe the complete state. 
+	
+	
 	//Part F Fix the fault and verify that the given test now produces the expected output. 
 	
 
