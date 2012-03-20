@@ -44,7 +44,10 @@ public class dresselJames07 {
 	 * a failure. Hint: Don't forget about the program counter
 	 * 
 	 * There are no possible test cases that result in an error state but do not
-	 * result in an observable failure. 
+	 * result in an observable failure. The error state happens when a truck is 
+	 * cloned, and the super.clone method creates a vehicle instead. Because 
+	 * truck.clone casts to truck, an exception is raised, so there is always a
+	 *  failure. 
 	 */
 	
 	//Part E For the given test case, identify the first error state. Be sure to describe the complete state. 
