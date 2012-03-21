@@ -1,9 +1,5 @@
 //dresselJames07.java
 
-//Fault: static defect
-//Error: incorrect interal state
-//Failure: External, incorrect behavior
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -18,8 +14,8 @@ public class dresselJames07 {
 	 * Truck.   
 	 */
 
-	/* Part B: If possible, identify a test case that does not execute the fault.
-	 * I don't believe that any meaningful test can be run that does not 
+	/* Part B: If possible, identify a test case that does not execute the 
+	 * fault. I don't believe that any meaningful test can be run that does not 
 	 * execute the fault. There are only two methods in Vehicle, the 
 	 * constructor and the clone method. Executing the clone method would 
 	 * result in executing the fault. Testing the constructor would be rather 
@@ -35,19 +31,19 @@ public class dresselJames07 {
 		
 		assertFalse(vehicleOriginal==vehicleClone);
 		assertEquals(vehicleOriginal.getClass(), vehicleClone.getClass());
-		assertEquals(vehicleOriginal, vehicleClone);//Not strictly necessary, but Bloch recommends
-		
+		assertEquals(vehicleOriginal, vehicleClone);/*//Not strictly 
+									necessary, but Bloch recommends */
 		}
 	
 
-	/* Part D if possible identify a test case that results in an error, but not
-	 * a failure. Hint: Don't forget about the program counter
+	/* Part D if possible identify a test case that results in an error, but 
+	 * not 	 * a failure. Hint: Don't forget about the program counter
 	 * 
-	 * There are no possible test cases that result in an error state but do not
-	 * result in an observable failure. The error state happens when a truck is 
-	 * cloned, and the super.clone method creates a vehicle instead. Because 
-	 * truck.clone casts to truck, an exception is raised, so there is always a
-	 *  failure. 
+	 * There are no possible test cases that result in an error state but do 
+	 * not result in an observable failure. The error state happens when a 
+	 * truck is cloned, and the super.clone method creates a vehicle instead. 
+	 * Because truck.clone casts to truck, an exception is raised, so there 
+	 * is always a failure. 
 	 */
 	
 
@@ -68,7 +64,7 @@ public class dresselJames07 {
 	public void testEFirstErrorState() {
 		
 		Truck truckOriginal = new Truck(4);
-		Truck truckClone = (Truck)truckOriginal.clone();//Exception happens here	
+		Truck truckClone = (Truck)truckOriginal.clone();//Exception here	
 		//Location "C"
 		assertFalse(truckOriginal==truckClone);
 		assertEquals(truckOriginal.getClass(), truckClone.getClass());
@@ -79,10 +75,11 @@ public class dresselJames07 {
 		*/
 	}
 	
-	
-	/*Part F Fix the fault and verify that the given test now produces the expected output.
+	/*Part F Fix the fault and verify that the given test now produces the 
+	 * expected output.
 	 * 
-	 * The code is in FixedVehicle.java and FixedTruck.java. The new code passes the tests. 
+	 * The code is in FixedVehicle.java and FixedTruck.java. The new code 
+	 * passes the tests. 
 	 */
 	@Test
 	public void testFFixedIt() {
@@ -91,7 +88,9 @@ public class dresselJames07 {
 		FixedTruck truckClone = (FixedTruck)truckOriginal.clone();
 		assertFalse(truckOriginal==truckClone);
 		assertEquals(truckOriginal.getClass(), truckClone.getClass());
-		assertEquals(truckOriginal, truckClone);//Not strictly necessary, but Bloch recommends
+		assertEquals(truckOriginal, truckClone);/* Not strictly necessary
+		* but Bloch recommends. This line is why I overrode equals(object o)
+		* in the FixedTruck class
+		*/	
 	}
-
 }
