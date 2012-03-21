@@ -4,21 +4,14 @@ class FixedVehicle implements Cloneable {
 
    public FixedVehicle(int y) { setX(y);}
 
-   public Object clone() { 
- //     Object result = new FixedVehicle(this.x);
-   //   // Location "A"
-     // return result;
-	      Object result;
-		try {
-			result = super.clone();
-		      // Location "B"
-		      //result = result;
-		      ((FixedVehicle) result).setX(this.getX());  // throws ClassCastException
-		      return result;     
+   public Object clone() {          
+		try {	
+			Object o = super.clone();
+			FixedVehicle result = (FixedVehicle)o;
+			result.x=this.x;
+			return result;
 		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
+			throw new AssertionError();
 		}
 
    }
