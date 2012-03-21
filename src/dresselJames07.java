@@ -69,15 +69,29 @@ public class dresselJames07 {
 		
 		Truck truckOriginal = new Truck(4);
 		Truck truckClone = (Truck)truckOriginal.clone();//Exception happens here	
-		//Location C
+		//Location "C"
 		assertFalse(truckOriginal==truckClone);
 		assertEquals(truckOriginal.getClass(), truckClone.getClass());
-		assertEquals(truckOriginal, truckClone);//Not strictly necessary, but Bloch recommends
-		
+		assertEquals(truckOriginal, truckClone);/* Not strictly necessary, but 
+		Bloch recommends. Also, this line would fail even if there was not an 
+		exception above Location "C" because Vehicle does not override 
+		.equals().		
+		*/
 	}
 	
 	
-	//Part F Fix the fault and verify that the given test now produces the expected output. 
-	
+	/*Part F Fix the fault and verify that the given test now produces the expected output.
+	 * 
+	 * The code is in FixedVehicle.java and FixedTruck.java. The new code passes the tests. 
+	 */
+	@Test
+	public void testFFixedIt() {
+		
+		FixedTruck truckOriginal = new FixedTruck(4);
+		FixedTruck truckClone = (FixedTruck)truckOriginal.clone();
+		assertFalse(truckOriginal==truckClone);
+		assertEquals(truckOriginal.getClass(), truckClone.getClass());
+		assertEquals(truckOriginal, truckClone);//Not strictly necessary, but Bloch recommends
+	}
 
 }
