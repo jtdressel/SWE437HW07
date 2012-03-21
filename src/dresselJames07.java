@@ -54,8 +54,28 @@ public class dresselJames07 {
 	/* Part E For the given test case, identify the first error state. Be sure 
 	 * to describe the complete state.
 	 * 
+	 * For the given test case below (cloning a truck) the error is caused by
+	 * the code at location C.  
+	 * 
+	 * In the code under test, the error state is thus:
+	 * result: a Vehicle (instead of being a truck) 
+	 * x: 4
+	 * pc: location "A" (just before the return.)
+	 * 
 	 * 
 	 */
+	@Test
+	public void testEFirstErrorState() {
+		
+		Truck truckOriginal = new Truck(4);
+		Truck truckClone = (Truck)truckOriginal.clone();//Exception happens here	
+		//Location C
+		assertFalse(truckOriginal==truckClone);
+		assertEquals(truckOriginal.getClass(), truckClone.getClass());
+		assertEquals(truckOriginal, truckClone);//Not strictly necessary, but Bloch recommends
+		
+	}
+	
 	
 	//Part F Fix the fault and verify that the given test now produces the expected output. 
 	
